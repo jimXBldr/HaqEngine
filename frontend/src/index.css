@@ -1,0 +1,80 @@
+/* frontend/src/index.css */
+/* Global resets and base styles for Haq Engine */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-base:       #07070d;
+  --bg-panel:      #0e0e1a;
+  --bg-card:       #12121f;
+  --bg-input:      #0a0a16;
+
+  --border:        #1e1e35;
+  --border-bright: #2a2a4a;
+
+  --text-primary:  #e8e8f0;
+  --text-secondary:#8888aa;
+  --text-mono:     #c0c0e0;
+
+  --accent-cyan:   #00e5ff;
+  --accent-green:  #00ff88;
+  --accent-red:    #ff3366;
+  --accent-amber:  #ffaa00;
+  --accent-gray:   #666688;
+
+  --supported:     #00ff88;
+  --contradicted:  #ff3366;
+  --incomplete:    #ffaa00;
+  --not-verifiable:#666688;
+
+  --font-display:  'Syne', sans-serif;
+  --font-mono:     'Space Mono', monospace;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  --glow-cyan:  0 0 20px rgba(0, 229, 255, 0.15);
+  --glow-green: 0 0 20px rgba(0, 255, 136, 0.15);
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  line-height: 1.6;
+  min-height: 100vh;
+  /* Subtle grid texture */
+  background-image:
+    linear-gradient(rgba(0, 229, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 229, 255, 0.02) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-base);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-bright);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-cyan);
+}
+
+::selection {
+  background: rgba(0, 229, 255, 0.2);
+  color: var(--accent-cyan);
+}
