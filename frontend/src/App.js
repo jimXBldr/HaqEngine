@@ -7,7 +7,7 @@ import ResultsList from "./components/ResultsList";
 import SummaryBar from "./components/SummaryBar";
 import "./App.css";
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || "http://localhost:5000";
+const BACKEND_URL = "http://localhost:5000";
 
 // Example text pre-filled so users can try immediately
 const EXAMPLE_TEXT =
@@ -114,7 +114,7 @@ export default function App() {
             <span className="logo-sub">ENGINE</span>
           </div>
           <p className="header-tagline">
-            LLM Claim Verification System(CS FUndamentals) &nbsp;·&nbsp; v1.0
+            LLM Claim Verification System &nbsp;·&nbsp; v1.0
           </p>
         </div>
         <div className="header-status">

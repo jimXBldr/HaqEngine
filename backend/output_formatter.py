@@ -37,6 +37,7 @@ def format_results(
             "verdict": verdict,
             "verdict_emoji": VERDICT_EMOJI.get(verdict, "❓"),
             "reason": item.get("reason", ""),
+            "source": item.get("source", None),   # { name, url } or None
         })
 
     # Build summary counts

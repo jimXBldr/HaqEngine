@@ -335,6 +335,290 @@ KNOWLEDGE_BASE = {
             "name": "MIT 6.0001 Intro to CS and Programming",
             "url": "https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/"
         }
+    },
+
+    "algorithm": {
+        "definition": "Finite sequence of well-defined instructions to solve a computational problem.",
+        "constraints": [
+            "Must terminate after finite steps",
+            "Must produce correct output for all valid inputs",
+            "Must be precisely specified (no ambiguity)"
+        ],
+        "time_complexity": None,
+        "space_complexity": None,
+        "properties": [
+            "Deterministic execution",
+            "Correctness provable",
+            "Complexity classifiable"
+        ],
+        "operations": None,
+        "common_misconceptions": [
+            "Any program is an algorithm (must solve specific problem)",
+            "Infinite execution acceptable (must terminate)",
+            "Correctness assumed (must be proven)"
+        ],
+        "notes": "Distinguished from heuristic by guaranteed correctness.",
+        "source": {
+            "name": "MIT 6.006 Introduction to Algorithms",
+            "url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/"
+        }
+    },
+
+    "linear_search": {
+        "definition": "Sequential examination of each element until target found or end reached.",
+        "constraints": [
+            "Works on any sequence type",
+            "No sorting prerequisite",
+            "Early termination on success"
+        ],
+        "time_complexity": "O(n) worst/average, O(1) best",
+        "space_complexity": "O(1)",
+        "properties": [
+            "Simple implementation",
+            "Optimal for unsorted data",
+            "Cache-friendly sequential access"
+        ],
+        "operations": {
+            "search": "O(n)"
+        },
+        "common_misconceptions": [
+            "Always inferior to binary search",
+            "Requires sorted input",
+            "Never optimal"
+        ],
+        "notes": "Optimal for unsorted data or small n.",
+        "source": {
+            "name": "MIT 6.006 Introduction to Algorithms",
+            "url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/"
+        }
+    },
+
+    "bubble_sort": {
+        "definition": "Repeatedly swap adjacent elements if out of order until no swaps needed.",
+        "constraints": [
+            "Adjacent swaps only",
+            "In-place algorithm",
+            "Early termination on sorted input"
+        ],
+        "time_complexity": "O(n²), Ω(n) best case",
+        "space_complexity": "O(1)",
+        "properties": [
+            "Simple implementation",
+            "Stable sort",
+            "Adaptive to nearly-sorted data"
+        ],
+        "operations": {
+            "sort": "O(n²)"
+        },
+        "common_misconceptions": [
+            "Never efficient",
+            "Always O(n²)",
+            "Unstable sort"
+        ],
+        "notes": "Quadratic but reveals inversion count.",
+        "source": {
+            "name": "MIT 6.006 Introduction to Algorithms",
+            "url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/"
+        }
+    },
+
+    "selection_sort": {
+        "definition": "Repeatedly select minimum element from unsorted portion and move to sorted.",
+        "constraints": [
+            "Exactly n² comparisons",
+            "In-place algorithm",
+            "Non-adaptive (always same comparisons)"
+        ],
+        "time_complexity": "O(n²)",
+        "space_complexity": "O(1)",
+        "properties": [
+            "Fixed comparison count",
+            "In-place swaps",
+            "Minimal writes (n swaps)"
+        ],
+        "operations": {
+            "sort": "O(n²)"
+        },
+        "common_misconceptions": [
+            "Adaptive algorithm",
+            "Early termination capability",
+            "Optimal small arrays"
+        ],
+        "notes": "Predictable but rarely fastest.",
+        "source": {
+            "name": "MIT 6.006 Introduction to Algorithms",
+            "url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/"
+        }
+    },
+
+    "insertion_sort": {
+        "definition": "Build sorted portion by inserting each new element into correct position.",
+        "constraints": [
+            "Adjacent swaps only",
+            "In-place algorithm",
+            "Adaptive to input order"
+        ],
+        "time_complexity": "O(n²) worst, O(n) nearly-sorted",
+        "space_complexity": "O(1)",
+        "properties": [
+            "Online algorithm",
+            "Stable sort",
+            "Cache-efficient for small arrays"
+        ],
+        "operations": {
+            "sort": "O(n²) worst"
+        },
+        "common_misconceptions": [
+            "Always quadratic",
+            "Unstable sort",
+            "Inefficient for small data"
+        ],
+        "notes": "Excellent for small/nearly-sorted arrays.",
+        "source": {
+            "name": "MIT 6.006 Introduction to Algorithms",
+            "url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/"
+        }
+    },
+
+    "heap_sort": {
+        "definition": "Build max-heap, repeatedly extract-max and restore heap property.",
+        "constraints": [
+            "Heap data structure required",
+            "In-place algorithm",
+            "Creates heap-sort order"
+        ],
+        "time_complexity": "O(n log n)",
+        "space_complexity": "O(1)",
+        "properties": [
+            "Guaranteed performance",
+            "In-place sorting",
+            "Not stable"
+        ],
+        "operations": {
+            "sort": "O(n log n)"
+        },
+        "common_misconceptions": [
+            "Adaptive algorithm",
+            "Cache-friendly",
+            "Stable sort"
+        ],
+        "notes": "Deterministic O(n log n) in-place.",
+        "source": {
+            "name": "MIT 6.006 Introduction to Algorithms",
+            "url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/"
+        }
+    },
+
+    "counting_sort": {
+        "definition": "Sort by counting occurrences of each value, compute positions.",
+        "constraints": [
+            "Integer keys in known range [0,k]",
+            "Stable sort",
+            "Non-comparison based"
+        ],
+        "time_complexity": "O(n + k)",
+        "space_complexity": "O(k)",
+        "properties": [
+            "Linear when k = O(n)",
+            "Stable ordering",
+            "Non-comparison sort"
+        ],
+        "operations": {
+            "sort": "O(n + k)"
+        },
+        "common_misconceptions": [
+            "Comparison-based",
+            "General purpose sort",
+            "Space optimal"
+        ],
+        "notes": "Breaks comparison model lower bound.",
+        "source": {
+            "name": "MIT 6.006 Introduction to Algorithms",
+            "url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/"
+        }
+    },
+
+    "dijkstra": {
+        "definition": "Greedy algorithm finding shortest paths from source to all vertices.",
+        "constraints": [
+            "Non-negative edge weights only",
+            "Priority queue implementation",
+            "Greedy choice property"
+        ],
+        "time_complexity": "O((V+E) log V)",
+        "space_complexity": "O(V)",
+        "properties": [
+            "Single-source shortest paths",
+            "Optimal substructure",
+            "Priority queue driven"
+        ],
+        "operations": {
+            "shortest_path": "O((V+E) log V)"
+        },
+        "common_misconceptions": [
+            "Handles negative weights",
+            "Same as BFS",
+            "Dynamic programming"
+        ],
+        "notes": "Binary heap or Fibonacci heap implementation.",
+        "source": {
+            "name": "MIT 6.006 Introduction to Algorithms",
+            "url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/"
+        }
+    },
+
+    "asymptotic_notation": {
+        "definition": "Tools analyzing algorithm growth rates: O, Ω, Θ, o, ω.",
+        "constraints": [
+            "n → ∞ behavior only",
+            "Hides polynomial constants",
+            "Mathematical limits required"
+        ],
+        "time_complexity": None,
+        "space_complexity": None,
+        "properties": [
+            "O = upper bound",
+            "Ω = lower bound",
+            "Θ = tight bound"
+        ],
+        "operations": None,
+        "common_misconceptions": [
+            "O includes constants",
+            "Θ = average case",
+            "Little-o same as Big-O"
+        ],
+        "notes": "Θ(f(n)) = O(f(n)) ∩ Ω(f(n)).",
+        "source": {
+            "name": "MIT 6.006 Introduction to Algorithms",
+            "url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/"
+        }
+    },
+
+    "master_theorem": {
+        "definition": "Solves recurrences T(n) = aT(n/b) + f(n) for divide-and-conquer.",
+        "constraints": [
+            "Form T(n) = aT(n/b) + f(n)",
+            "a ≥ 1, b > 1 constants",
+            "Regularity condition case 3"
+        ],
+        "time_complexity": None,
+        "space_complexity": None,
+        "properties": [
+            "Case 1: f(n) = O(n^(log_b(a)-ε)) → Θ(n^(log_b(a)))",
+            "Case 2: f(n) = Θ(n^(log_b(a)) log^k(n)) → Θ(n^(log_b(a)) log^(k+1)(n))",
+            "Case 3: f(n) = Ω(n^(log_b(a)+ε)) → Θ(f(n))"
+        ],
+        "operations": None,
+        "common_misconceptions": [
+            "Applies to all recurrences",
+            "No regularity condition",
+            "Only for sorting"
+        ],
+        "notes": "Merge sort: T(n)=2T(n/2)+O(n) = O(n log n).",
+        "source": {
+            "name": "MIT 6.006 Introduction to Algorithms",
+            "url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/"
+        }
     }
 }
 

@@ -50,9 +50,12 @@ def verify_claim(claim: str, topic: str) -> dict:
             "topic": topic,
             "verdict": "Not Verifiable",
             "reason": "No matching topic found in the knowledge base.",
+            "source": None,
         }
 
     truth = KNOWLEDGE_BASE[topic]
+    # Extract source before sending truth to LLM (source is metadata, not ground truth content)
+    source = truth.get("source", None)
     truth_json = json.dumps(truth, indent=2)
 
     user_message = (
@@ -69,6 +72,7 @@ def verify_claim(claim: str, topic: str) -> dict:
             "topic": topic,
             "verdict": "Not Verifiable",
             "reason": f"Verification engine error: {str(e)}",
+            "source": source,
         }
 
     # Validate the response has the expected fields
@@ -86,6 +90,7 @@ def verify_claim(claim: str, topic: str) -> dict:
         "topic": topic,
         "verdict": verdict,
         "reason": reason,
+        "source": source,
     }
 
 
